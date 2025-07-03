@@ -1,17 +1,25 @@
-# Let's inspect the uploaded Jupyter notebook to understand its contents
-import nbformat
+#  Medical Image Classification using Ensemble Learning (ResNet50 + Voting Classifier)
 
-# Load the notebook
-notebook_path = "/mnt/data/resnet50_medical.ipynb"
-with open(notebook_path, 'r', encoding='utf-8') as f:
-    notebook = nbformat.read(f, as_version=4)
+This project applies **ensemble learning** to medical image classification by combining the power of **deep learning (ResNet50)** with traditional ensemble techniques like **VotingClassifier**. It showcases how modern CNN models can be enhanced through ensemble strategies for improved performance and robustness.
 
-# Extract all code cells and a preview of markdown for summary
-code_cells = [cell['source'] for cell in notebook.cells if cell['cell_type'] == 'code']
-markdown_cells = [cell['source'] for cell in notebook.cells if cell['cell_type'] == 'markdown']
+##  Objective
 
-# Give a short preview for analysis
-code_preview = code_cells[:2]  # show the first 2 code cells
-markdown_preview = markdown_cells[:2]  # show the first 2 markdown cells
+- Perform classification of medical images (e.g., X-rays, MRIs).
+- Use ResNet50 for feature extraction.
+- Combine predictions using an ensemble method (Voting Classifier).
 
-code_preview, markdown_preview
+##  Technologies Used
+
+- Python
+- TensorFlow / Keras
+- Scikit-learn
+- OpenCV
+- Matplotlib / Seaborn
+- Ensemble Methods (Voting Classifier)
+
+##  Dataset
+
+
+- [Chest X-ray Dataset (Kaggle)](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
+- [ISIC Skin Cancer Dataset](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
+- Or any folder-structured dataset like:
